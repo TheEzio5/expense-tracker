@@ -1,6 +1,8 @@
 
 from expense import Expense
 from expense_manager import ExpenseManager
+from storage import save_expenses, load_expenses
+
 
 from menu import show_expense_menu
 
@@ -24,11 +26,12 @@ while True:
         expense = Expense(amount, category, description, date)
 
         manager.add_expense(expense)
+        save_expenses(manager.list_expenses())
 
 
 
     elif menu_choice == "2":
-
+        manager.expenses = load_expenses()
         manager.show_expenses()
 
     elif menu_choice == "3":

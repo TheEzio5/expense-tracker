@@ -5,4 +5,18 @@ class Expense:
         self.category = category
         self.description = description
         self.date = date
-    
+
+    def to_dict(self):
+        return {
+            'amount': self.amount,
+            'category': self.category,
+            'description': self.description,
+            'date': self.date
+        }
+
+    @classmethod
+    def from_dict(cls, data):
+        return cls(data["amount"],
+                   data["category"],
+                   data["description"],
+                   data["date"])

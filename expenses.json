@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "amount": "10",
+        "category": "Groceries",
+        "description": "Milk, bread, eggs, flour, bowl",
+        "date": "05.06.2026"
+    }
+]
