@@ -25,9 +25,11 @@ while True:
 
         manager.add_expense(expense)
 
+
+
     elif menu_choice == "2":
 
-        manager.list_expenses()
+        manager.show_expenses()
 
     elif menu_choice == "3":
         print("Thank you for using this program")
