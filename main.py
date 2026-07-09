@@ -7,6 +7,7 @@ from storage import save_expenses, load_expenses
 from menu import show_expense_menu
 
 manager = ExpenseManager()
+manager.expenses = load_expenses()
 
 
 while True:
@@ -31,10 +32,16 @@ while True:
 
 
     elif menu_choice == "2":
-        manager.expenses = load_expenses()
+
         manager.show_expenses()
 
     elif menu_choice == "3":
+        expense_index = int(input("Enter expense number: "))
+        manager.delete_expense(expense_index)
+        save_expenses(manager.list_expenses())
+
+
+    elif menu_choice == "4":
         print("Thank you for using this program")
         break
     else:

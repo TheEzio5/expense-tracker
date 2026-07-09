@@ -22,13 +22,19 @@ class ExpenseManager:
             print("No expenses found")
         else:
 
-            for expense in self.expenses:
-
+            for index, expense in enumerate(self.expenses, start=1):
 
                 print("-" * 10)
+                print(f"Expense #{index}")
                 print(f"Amount: {expense.amount}€")
                 print(f"Category: {expense.category}")
                 print(f"Description: {expense.description}")
                 print(f"Date: {expense.date}")
                 print("-" * 10)
 
+    def delete_expense(self, expense_index):
+        if 1 <= expense_index <= len(self.expenses):
+            self.expenses.pop(expense_index - 1)
+            print("Deleted expense.")
+        else:
+            print("Expense number out of range.")

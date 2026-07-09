@@ -11,8 +11,9 @@ def save_expenses(expenses):
         json.dump(expenses_data, outfile, indent=4)
 
 def load_expenses():
-    with open('expenses.json', 'r') as infile:
-        expenses_data = json.load(infile)
+    try:
+        with open('expenses.json', 'r') as infile:
+            expenses_data = json.load(infile)
 
         expenses = []
 
@@ -20,3 +21,15 @@ def load_expenses():
             expense = Expense.from_dict(data)
             expenses.append(expense)
         return expenses
+
+
+    except FileNotFoundError:
+
+        print("expenses.json not found.")
+        return []
+
+
+    except json.JSONDecodeError:
+
+        print("expenses.json is corrupted.")
+        return []
