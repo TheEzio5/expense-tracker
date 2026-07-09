@@ -16,13 +16,13 @@ class ExpenseManager:
     def list_expenses(self):
             return self.expenses
 
-    def show_expenses(self):
+    def show_expenses(self,expenses):
 
-        if not self.expenses:
+        if not expenses:
             print("No expenses found")
         else:
 
-            for index, expense in enumerate(self.expenses, start=1):
+            for index, expense in enumerate(expenses, start=1):
 
                 print("-" * 10)
                 print(f"Expense #{index}")
@@ -38,3 +38,12 @@ class ExpenseManager:
             print("Deleted expense.")
         else:
             print("Expense number out of range.")
+
+    def search_expenses(self, expenses_category):
+        matched_expenses = []
+        for expense in self.expenses:
+
+            if expense.category.lower() == expenses_category.lower():
+                matched_expenses.append(expense)
+        return matched_expenses
+

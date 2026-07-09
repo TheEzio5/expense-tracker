@@ -33,15 +33,19 @@ while True:
 
     elif menu_choice == "2":
 
-        manager.show_expenses()
+        manager.show_expenses(manager.list_expenses())
 
     elif menu_choice == "3":
         expense_index = int(input("Enter expense number: "))
         manager.delete_expense(expense_index)
         save_expenses(manager.list_expenses())
 
-
     elif menu_choice == "4":
+        category = input("Enter expense category: ")
+        matched_expenses =  manager.search_expenses(category)
+        manager.show_expenses(matched_expenses)
+
+    elif menu_choice == "5":
         print("Thank you for using this program")
         break
     else:
