@@ -12,5 +12,6 @@ def show_expense_menu():
     print("2. Show expense")
     print("3. Remove expense")
     print("4. Search expense")
-    print("5. Exit")
+    print("5. Statistics")
+    print("6. Exit")
     print()

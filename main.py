@@ -19,7 +19,7 @@ while True:
 
 
 
-        amount = input("Please enter the amount you want to add: ")
+        amount = int(input("Please enter the amount you want to add: "))
         category = input ("Please enter the category of the expense: ")
         description = input("Please enter the description: ")
         date = input("Please enter the date: ")
@@ -46,6 +46,10 @@ while True:
         manager.show_expenses(matched_expenses)
 
     elif menu_choice == "5":
+        
+        manager.statistics_expenses()
+
+    elif menu_choice == "6":
         print("Thank you for using this program")
         break
     else:

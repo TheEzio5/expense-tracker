@@ -47,3 +47,33 @@ class ExpenseManager:
                 matched_expenses.append(expense)
         return matched_expenses
 
+    def statistics_expenses(self):
+
+        if not self.expenses:
+            print("No expenses found.")
+            return
+
+        total_expenses = len(self.expenses)
+        print(f"Total expenses: {total_expenses}")
+
+        total_spent_expenses = 0
+        for expense in self.expenses:
+            total_spent_expenses += expense.amount
+        print(f"Total spent expenses: {total_spent_expenses}€")
+
+        if total_expenses == 0:
+            print("Error cannot divide by 0")
+        else:
+            average_spent_expenses = total_spent_expenses / total_expenses
+
+            print(f"Average spent expenses: {average_spent_expenses}€")
+
+        max_expense = max(self.expenses, key=lambda expense: expense.amount)
+        print(f"Maximum spent expenses: {max_expense.amount}€")
+
+        min_expense = min(self.expenses, key=lambda expense: expense.amount)
+        print(f"Minimum spent expenses: {min_expense.amount}€")
+
+
+
+
