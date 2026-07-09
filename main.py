@@ -46,10 +46,16 @@ while True:
         manager.show_expenses(matched_expenses)
 
     elif menu_choice == "5":
-        
+
         manager.statistics_expenses()
 
     elif menu_choice == "6":
+        expense_index = int(input("Enter expense number: "))
+        manager.edit_expense(expense_index)
+        save_expenses(manager.list_expenses())
+
+
+    elif menu_choice == "7":
         print("Thank you for using this program")
         break
     else:

@@ -74,6 +74,31 @@ class ExpenseManager:
         min_expense = min(self.expenses, key=lambda expense: expense.amount)
         print(f"Minimum spent expenses: {min_expense.amount}€")
 
+    def edit_expense(self,expense_index):
+        if not self.expenses:
+            print("No expenses found.")
+            return
+        if 1 <= expense_index <= len(self.expenses):
+
+            expense = self.expenses[expense_index - 1]
+            new_amount = input(f"Enter new amount: ({expense.amount}): ")
+            if new_amount != "":
+                expense.amount = int(new_amount)
+
+            new_category = input(f"Enter new category ({expense.category}): ")
+            if new_category != "":
+                expense.category = new_category
+            new_description = input(f"Enter new description: ({expense.description}): ")
+            if new_description != "":
+                expense.description = new_description
+            new_date = input(f"Enter new date: ({expense.date}): ")
+            if new_date != "":
+                expense.date = new_date
+        else:
+            print("Expense number out of range.")
+
+
+
 
 
 
