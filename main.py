@@ -76,9 +76,32 @@ while True:
         manager.edit_expense(expense_index)
         save_expenses(manager.list_expenses())
 
-
     elif menu_choice == "7":
+        print("Sort by:")
+        print("1. Amount")
+        print("2. Category")
+        print("3. Date")
+
+        sort_choice = input("Please select your choice: ")
+
+        if sort_choice == "1":
+               manager.sort_expenses("amount")
+
+        elif sort_choice == "2":
+                manager.sort_expenses("category")
+
+        elif sort_choice == "3":
+                manager.sort_expenses("date")
+
+        else:
+            print("Invalid option.")
+            continue
+        manager.show_expenses(manager.list_expenses())
+
+
+    elif menu_choice == "8":
         print("Thank you for using this program")
         break
     else:
         print("Invalid option.")
+

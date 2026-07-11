@@ -104,6 +104,16 @@ class ExpenseManager:
             print("Expense number out of range.")
 
 
+    def sort_expenses(self,sort_by):
+        if sort_by == "amount":
+            self.expenses.sort(key=lambda expense: expense.amount)
+        elif sort_by == "category":
+            self.expenses.sort(key=lambda expense: expense.category)
+        elif sort_by == "date":
+            self.expenses.sort(key=lambda expense: expense.date)
+        else:
+            print("Sort by must be 'amount' or 'category' or 'date'")
+
 
 
 
