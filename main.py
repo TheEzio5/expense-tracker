@@ -67,6 +67,9 @@ while True:
         manager.show_expenses(matched_expenses)
 
     elif menu_choice == "5":
+        print()
+        print("STATISTICS OVERVIEW")
+        print()
 
         manager.statistics_expenses()
 

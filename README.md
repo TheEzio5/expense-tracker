@@ -1,36 +1,53 @@
 # 💰 Expense Tracker
 
-Expense Tracker is a command-line application written in Python that helps users record, organize, and analyze their daily expenses.
+Expense Tracker is a command-line application written in Python that helps users record, organize, search, and analyze their expenses through a simple command-line interface.
 
-The project focuses on clean object-oriented programming, file handling, and building practical software that solves real-world problems.
+The project focuses on clean object-oriented programming, file handling, data persistence, and building practical software that solves real-world problems.
 
-This is my fourth Python portfolio project, created as part of my journey toward becoming a Python developer.
+This is my fourth Python portfolio project, built to practice object-oriented programming, file handling, data persistence, and input validation while creating a practical command-line application.
+
+---
+
+## 📸 Screenshots
+
+### Main Menu
+
+![Expense Tracker Main Menu](images/expense_tracker_main_menu.png)
+
+### Statistics
+
+![Expense Tracker Statistics](images/expense_tracker_stats.png)
+
+### Search Expenses
+
+![Expense Tracker Search](images/expense_tracker_search.png)
 
 ---
 
 ## ✨ Features
 
-### Current Version (Planned)
-
-- Add expenses
-- View all expenses
-- Edit expenses
-- Delete expenses
-- Search expenses
-- Filter by category
-- Sort expenses
-- Automatic JSON save/load
-- Input validation
+* Add expenses
+* View all expenses
+* Edit expenses
+* Delete expenses
+* Search expenses by category
+* Sort expenses by amount, category, or date
+* Expense statistics
+* Export expenses to CSV
+* Automatic JSON save/load
+* Input validation
 
 ---
 
 ## 🛠 Technologies Used
 
-- Python 3
-- Object-Oriented Programming (OOP)
-- JSON
-- Git
-- GitHub
+* Python 3
+* Object-Oriented Programming (OOP)
+* JSON
+* CSV
+* datetime
+* Git
+* GitHub
 
 ---
 
@@ -38,6 +55,11 @@ This is my fourth Python portfolio project, created as part of my journey toward
 
 ```text
 expense-tracker/
+│
+├── images/
+│   ├── expense_tracker_main_menu.png
+│   ├── expense_tracker__stats.png
+│   └── expense_tracker__search.png
 │
 ├── main.py
 ├── expense.py
@@ -61,7 +83,7 @@ Clone the repository:
 git clone https://github.com/TheEzio5/expense-tracker.git
 ```
 
-Open the project:
+Navigate to the project folder:
 
 ```bash
 cd expense-tracker
@@ -75,28 +97,26 @@ python main.py
 
 ---
 
-## 📌 Planned Features
+## 📖 Skills Demonstrated
 
-- Monthly reports
-- Spending statistics
-- CSV export
-- SQLite database
-- Charts and graphs
-- GUI version
+* Object-Oriented Programming (OOP)
+* File handling
+* JSON serialization
+* CSV export
+* Input validation
+* Sorting and searching algorithms
+* Basic data analysis
+* Git version control
 
 ---
 
-## 📖 What I Plan to Learn
+## 📌 Future Improvements
 
-While building this project I will practice:
-
-- Advanced Object-Oriented Programming
-- Working with dates and time
-- Data analysis
-- JSON and SQLite
-- CSV export
-- Clean project architecture
-- Git workflow
+* Monthly reports
+* Budget limits by category
+* SQLite database integration
+* Charts and graphs
+* GUI version (Tkinter or PyQt)
 
 ---
 
