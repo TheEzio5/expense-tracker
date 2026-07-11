@@ -1,7 +1,7 @@
 
 
 from expense import Expense
-
+from datetime import datetime
 
 class ExpenseManager:
 
@@ -83,8 +83,10 @@ class ExpenseManager:
             expense = self.expenses[expense_index - 1]
             new_amount = input(f"Enter new amount: ({expense.amount}): ")
             if new_amount != "":
-                expense.amount = int(new_amount)
-
+                try:
+                    expense.amount = int(new_amount)
+                except ValueError:
+                    print("Invalid amount. Please enter a number.")
             new_category = input(f"Enter new category ({expense.category}): ")
             if new_category != "":
                 expense.category = new_category
@@ -93,7 +95,11 @@ class ExpenseManager:
                 expense.description = new_description
             new_date = input(f"Enter new date: ({expense.date}): ")
             if new_date != "":
-                expense.date = new_date
+                try:
+                    datetime.strptime(new_date, "%d-%m-%Y")
+                    expense.date = new_date
+                except ValueError:
+                    print("Date must be in YYYY-MM-DD format")
         else:
             print("Expense number out of range.")
 

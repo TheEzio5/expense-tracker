@@ -2,7 +2,7 @@
 from expense import Expense
 from expense_manager import ExpenseManager
 from storage import save_expenses, load_expenses
-
+from datetime import datetime
 
 from menu import show_expense_menu
 
@@ -24,8 +24,19 @@ while True:
             print("Invalid amount. Please enter a number.")
             continue
         category = input ("Please enter the category of the expense: ")
+        if category.strip() == "":
+            print("Category cannot be empty.")
+            continue
         description = input("Please enter the description: ")
-        date = input("Please enter the date: ")
+        if description.strip() == "":
+            print("Description cannot be empty.")
+            continue
+        date = input("Please enter the date (DD-MM-YYYY): ")
+        try:
+            datetime.strptime(date, "%d-%m-%Y")
+        except ValueError:
+            print("Invalid date format. Use DD-MM-YYYY.")
+            continue
 
         expense = Expense(amount, category, description, date)
 
