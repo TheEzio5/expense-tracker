@@ -20,15 +20,18 @@ while True:
 
         try:
             amount = int(input("Please enter the amount you want to add: "))
+            if amount <= 0:
+                print("Amount must be greater than 0.")
+                continue
         except ValueError:
             print("Invalid amount. Please enter a number.")
             continue
-        category = input ("Please enter the category of the expense: ")
-        if category.strip() == "":
+        category = input ("Please enter the category of the expense: ").strip()
+        if category == "":
             print("Category cannot be empty.")
             continue
-        description = input("Please enter the description: ")
-        if description.strip() == "":
+        description = input("Please enter the description: ").strip()
+        if description == "":
             print("Description cannot be empty.")
             continue
         date = input("Please enter the date (DD-MM-YYYY): ")
@@ -70,6 +73,9 @@ while True:
     elif menu_choice == "6":
         try:
             expense_index = int(input("Enter expense number: "))
+            if expense_index <= 0:
+                print("Expense number must be greater than 0.")
+                continue
         except ValueError:
             print("Invalid expense number. Please enter a number.")
             continue

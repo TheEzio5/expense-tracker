@@ -66,7 +66,7 @@ class ExpenseManager:
         else:
             average_spent_expenses = total_spent_expenses / total_expenses
 
-            print(f"Average spent expenses: {average_spent_expenses}€")
+        print(f"Average spent expenses: {average_spent_expenses:.2f}€")
 
         max_expense = max(self.expenses, key=lambda expense: expense.amount)
         print(f"Maximum spent expenses: {max_expense.amount}€")
@@ -85,6 +85,8 @@ class ExpenseManager:
             if new_amount != "":
                 try:
                     expense.amount = int(new_amount)
+                    if expense.amount <= 0:
+                        print("Amount must be greater than 0.")
                 except ValueError:
                     print("Invalid amount. Please enter a number.")
             new_category = input(f"Enter new category ({expense.category}): ")
@@ -110,7 +112,7 @@ class ExpenseManager:
         elif sort_by == "category":
             self.expenses.sort(key=lambda expense: expense.category)
         elif sort_by == "date":
-            self.expenses.sort(key=lambda expense: expense.date)
+            self.expenses.sort(key=lambda expense: datetime.strptime(expense.date, "%d-%m-%Y"))
         else:
             print("Sort by must be 'amount' or 'category' or 'date'")
 
