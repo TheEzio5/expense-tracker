@@ -1,7 +1,7 @@
 
 from expense import Expense
 from expense_manager import ExpenseManager
-from storage import save_expenses, load_expenses
+from storage import save_expenses, load_expenses, export_csv
 from datetime import datetime
 
 from menu import show_expense_menu
@@ -98,8 +98,11 @@ while True:
             continue
         manager.show_expenses(manager.list_expenses())
 
-
     elif menu_choice == "8":
+        export_csv(manager.list_expenses())
+        print("Expenses exported to expenses.csv")
+
+    elif menu_choice == "9":
         print("Thank you for using this program")
         break
     else:

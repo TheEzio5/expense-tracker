@@ -1,4 +1,5 @@
 import json
+import csv
 
 from expense import Expense
 
@@ -33,3 +34,19 @@ def load_expenses():
 
         print("expenses.json is corrupted.")
         return []
+
+def export_csv(expenses):
+    with open('expenses.csv', 'w', newline="") as outfile:
+        writer = csv.writer(outfile)
+        writer.writerow(["Amount",
+                         "Category",
+                         "Description",
+                         "Date"])
+
+        for expense in expenses:
+            writer.writerow([expense.amount,
+                             expense.category,
+                             expense.description,
+                             expense.date])
+
+
