@@ -18,8 +18,11 @@ while True:
     if menu_choice == "1":
 
 
-
-        amount = int(input("Please enter the amount you want to add: "))
+        try:
+            amount = int(input("Please enter the amount you want to add: "))
+        except ValueError:
+            print("Invalid amount. Please enter a number.")
+            continue
         category = input ("Please enter the category of the expense: ")
         description = input("Please enter the description: ")
         date = input("Please enter the date: ")
@@ -36,7 +39,11 @@ while True:
         manager.show_expenses(manager.list_expenses())
 
     elif menu_choice == "3":
-        expense_index = int(input("Enter expense number: "))
+        try:
+            expense_index = int(input("Enter expense number: "))
+        except ValueError:
+            print("Invalid expense number. Please enter a number.")
+            continue
         manager.delete_expense(expense_index)
         save_expenses(manager.list_expenses())
 
@@ -50,7 +57,11 @@ while True:
         manager.statistics_expenses()
 
     elif menu_choice == "6":
-        expense_index = int(input("Enter expense number: "))
+        try:
+            expense_index = int(input("Enter expense number: "))
+        except ValueError:
+            print("Invalid expense number. Please enter a number.")
+            continue
         manager.edit_expense(expense_index)
         save_expenses(manager.list_expenses())
 

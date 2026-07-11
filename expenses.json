@@ -10,5 +10,11 @@
         "category": "Bills",
         "description": "Paid bills for telephone and internet",
         "date": "15.08.2025"
+    },
+    {
+        "amount": 5,
+        "category": "1",
+        "description": "",
+        "date": ""
     }
 ]
